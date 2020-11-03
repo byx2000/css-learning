@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .input_text
+            {
+                margin-top: 50px;
+                position: relative;
+            }
+
+            .input_text input
+            {
+                border: none;
+                outline: none;
+                padding: 0px;
+                width: 300px;
+                font-size: 16px;
+            }
+
+            .input_text::after
+            {
+                content: "";
+                display: block;
+                background: -webkit-linear-gradient(right, red, green, blue);
+                width: 300px;
+                height: 2px;
+            }
+
+            .input_text:hover::before
+            {
+                content: attr(data-hint);
+                display: block;
+                font-size: 12px;
+                color: #666;
+                position: absolute;
+                top: -18px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="input_text" data-hint="请输入用户名">
+            <input type="text"/>
+        </div>
+        
+    </body>
+</html>
