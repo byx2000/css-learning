@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            span:hover::before
+            {
+                content: attr(data-myattr);
+                color: white;
+                background-color: gray;
+                margin: 0px 10px 0px 0px;
+                padding: 5px;
+            }
+
+            span::after
+            {
+                content: "after";
+                color: white;
+                background-color: gray;
+                margin: 0px 0px 0px 10px;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <span data-myattr="before">鼠标移到此处显示隐藏内容</span>
+    </body>
+</html>
