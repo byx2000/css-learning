@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .primary_button
+            {
+                border: none;
+                outline: none;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                width: 100px;
+                height: 30px;
+                background-color: #1492ff;
+                color: white;
+            }
+
+            .primary_button:hover
+            {
+                background-color: #1974cd;
+            }
+
+            .primary_button:active
+            {
+                background-color: #0b5cab;
+            }
+
+            .primary_button:disabled
+            {
+                background-color: #f2f2f2;
+                color: #c7c7c7;
+            }
+
+            .secondary_button
+            {
+                border: 1px solid #d1d3d2;
+                outline: none;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                width: 100px;
+                height: 30px;
+                background-color: #f0f0f0;
+                color: #686868;
+            }
+
+            .secondary_button:hover
+            {
+                border: 1px solid #1492ff;
+                color: #1492ff;
+            }
+
+            .secondary_button:active
+            {
+                background-color: #ffffff;
+            }
+
+            .secondary_button:disabled
+            {
+                border: 1px solid #f2f2f2;
+                background-color: #f2f2f2;
+                color: #c7c7c7;
+            }
+        </style>
+        <script>
+            function primary()
+            {
+                alert("主按钮");
+            }
+
+            function secondary()
+            {
+                alert("次按钮");
+            }
+        </script>
+    </head>
+    <body>
+        <input type="button" value="主按钮" class="primary_button" onclick="primary()"/><br/>
+        <input type="button" value="主按钮(禁用)" class="primary_button" disabled/><br/>
+        <input type="button" value="次按钮" class="secondary_button" onclick="secondary()"/><br/>
+        <input type="button" value="次按钮(禁用)" class="secondary_button" disabled/>
+    </body>
+</html>
