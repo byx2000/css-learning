@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .parent
+            {
+                width: 600px;
+                border: 1px solid black;
+                padding: 10px;
+            }
+
+            .child1
+            {
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                float: left;
+            }
+
+            .child2
+            {
+                width: 100px;
+                height: 100px;
+                background-color: blue;
+                float: right;
+            }
+
+            .clearfix
+            {
+                clear: both;
+            }
+
+            /*选中第二个parent*/
+            .parent:nth-of-type(2)::after
+            {
+                content: "";
+                display: block;
+                clear: both;
+            }
+
+            /*选中第三个parent*/
+            .parent:nth-of-type(3)
+            {
+                overflow: hidden;
+            }
+        </style>
+        </style>
+    </head>
+    <body>
+        <!--方法1：添加隐藏的.clearfix元素-->
+        <div class="parent">
+            <div class="child1"></div>
+            <div class="child2"></div>
+            <div class="clearfix"></div>
+        </div>
+        <br/>
+        <!--方法2：使用after伪元素-->
+        <div class="parent">
+            <div class="child1"></div>
+            <div class="child2"></div>
+        </div>
+        <br/>
+        <!--方法3：使用overflow属性触发BFC-->
+        <div class="parent">
+            <div class="child1"></div>
+            <div class="child2"></div>
+        </div>
+    </body>
+</html>
