@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .image_holder
+            {
+                width: 150px;
+                height: 80px;
+                position: relative;
+            }
+
+            .image_holder img
+            {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                z-index: 3;
+            }
+
+            .image_holder:hover img
+            {
+                z-index: 1;
+            }
+
+            .image_info
+            {
+                width: 100%;
+                height: 100%;
+                background-color: #aaa;
+                position: relative;
+                z-index: 2;
+                text-align: center;
+                color: white;
+                line-height: 80px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="image_holder">
+            <img src="./images/video.png"/>
+            <div class="image_info">JavaWeb实战</div>
+        </div>
+    </body>
+</html>
