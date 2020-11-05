@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .sidebar
+            {
+                display: flex;
+            }
+
+            .sidebar ul
+            {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                margin-right: 20px;
+                background-color: #226ad1;
+            }
+
+            .sidebar ul li
+            {
+                padding: 15px 40px 15px 40px;
+                color: white;
+                font-weight: bold;
+            }
+
+            .sidebar ul li:hover
+            {
+                background-color: #1e5ab3;
+                cursor: pointer;
+            }
+
+            .sidebar ul li[selected]
+            {
+                background-color: #1e5ab3;
+            }
+        </style>
+        <script src="./scripts/jquery-3.5.1.min.js"></script>
+        <script>
+            $(function()
+            {
+                let tab_controls = $(".sidebar");
+                for (let tab_control of tab_controls)
+                {
+                    let tab_headers = $(tab_control).children("ul").children("li");
+                    let tab_contents = $(tab_control).children("div");
+                    
+                    tab_contents.hide();
+
+                    for (let i = 0; i < tab_headers.length; ++i)
+                    {
+                        if ($(tab_headers[i]).attr("selected") !== undefined)
+                        {
+                            $(tab_contents[i]).show();
+                        }
+
+                        $(tab_headers[i]).click(function()
+                        {
+                            tab_headers.removeAttr("selected");
+                            $(tab_headers[i]).attr("selected", "");
+                            tab_contents.hide();
+                            $(tab_contents[i]).show();
+                        });
+                    }
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <div class="sidebar">
+            <ul>
+                <li selected>页面1</li>
+                <li>页面2</li>
+                <li>页面3</li>
+                <li>页面4</li>
+            </ul>
+            <div>
+                用户名：<input type="text"/><br/>
+                密码：<input type="text"/><br/>
+                <input type="button" value="登录"/>
+            </div>
+            <div>
+                用户名：<input type="text"/><br/>
+                密码：<input type="text"/><br/>
+                手机号<input type="number"/><br/>
+                邮箱<input type="email"/><br/>
+                男<input type="radio"/>女<input type="radio"/><br/>
+                <input type="button" value="登录"/>
+            </div>
+            <div>
+                <img src="./images/1.png"/>
+            </div>
+            <div>
+                内容4
+            </div>
+        </div>
+    </body>
+</html>
